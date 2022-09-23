@@ -302,6 +302,17 @@ fn deserializes_f64() {
 }
 
 #[test]
+fn deserializes_f32_64_inf() {
+    deserializes_to("Inf", std::f32::INFINITY);
+    deserializes_to("+Inf", std::f32::INFINITY);
+    deserializes_to("-Inf", std::f32::NEG_INFINITY);
+
+    deserializes_to("Inf", std::f64::INFINITY);
+    deserializes_to("+Inf", std::f64::INFINITY);
+    deserializes_to("-Inf", std::f64::NEG_INFINITY);
+}
+
+#[test]
 fn deserializes_char() {
     deserializes_to("'x'", 'x');
     deserializes_to("\"자\"", '자');

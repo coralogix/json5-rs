@@ -90,6 +90,7 @@ numeric_literal = _{
   hex_integer_literal |
   decimal_literal |
   "Infinity" |
+  "Inf" |
   "NaN"
 }
 

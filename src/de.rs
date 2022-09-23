@@ -350,6 +350,9 @@ fn parse_number(pair: &Pair<'_, Rule>) -> Result<f64> {
     match pair.as_str() {
         "Infinity" => Ok(f64::INFINITY),
         "-Infinity" => Ok(f64::NEG_INFINITY),
+        "Inf" => Ok(f64::INFINITY),
+        "+Inf" => Ok(f64::INFINITY),
+        "-Inf" => Ok(f64::NEG_INFINITY),
         "NaN" | "-NaN" => Ok(f64::NAN),
         s if is_hex_literal(s) => parse_hex(&s[2..]).map(f64::from),
         s => {
